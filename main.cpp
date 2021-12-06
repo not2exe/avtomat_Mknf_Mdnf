@@ -8,7 +8,9 @@ bool checkhex(char j) {
     return !(j > 'F' or j < '0' or (j >= ':' and j < '@'));
 }// проверка элемента на принадлежность 16ричной системе
 bool mknfcheck(int j) {
-    return j == '0' + '9' or j == '0' * 2 or j == '0' * 4 or j == '0' * 2 + '9' * 2 or j == '0' + 3 * '9' or j == '0' * 8 or j == '0' * 4 + '9' * 4;
+    return j == '0' + '9' or j == '0' * 2 or
+           j == '0' * 4 or j=='9'+'0'*3 or j == '0' * 2 + '9' * 2 or j == '0' + '9' * 3 or
+           j == '0' * 8 or j == '0' * 4 + '9' * 4 or j == '0' * 7 + '9' * 1 or j == '0' * 5 + '9' * 3 or j == '0' * 3 + '9' * 5 or j=='0'*2+'9'*6 or j=='0'*1+'9'*7;
 }//проверяет  интервал подходит он или нет к mknf
 string noname(string j[], int o) {
     string rez = "";
@@ -62,7 +64,9 @@ string hextobin(string c) {
     return j;
 }// переводит 16ричной вектор функции в двоичную форму
 bool mdnfcheck(int j) {
-    return j == '1' + '9' or j == '1' * 2 or j == '1' * 4 or j == '1' * 2 + '9' * 2 or j == '1' + '9' * 3 or j == '1' * 8 or j == '1' * 4 + '9' * 4;;
+    return j == '1' + '9' or j == '1' * 2 or
+           j == '1' * 4 or j=='9'+'1'*3 or j == '1' * 2 + '9' * 2 or j == '1' + '9' * 3 or
+           j == '1' * 8 or j == '1' * 4 + '9' * 4 or j == '1' * 7 + '9' * 1 or j == '1' * 5 + '9' * 3 or j == '1' * 3 + '9' * 5 or j=='1'*2+'9'*6 or j=='1'*1+'9'*7;
 }// проверяет интервал, подходит ли он или нет k mdnf
 string log0(string j) {
     string u = "";
